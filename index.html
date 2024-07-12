@@ -33,19 +33,70 @@
 
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand">Exercicio GT02 SUL </a>
+            <a class="navbar-brand" href="/">Exercicio GT02 SUL </a>
             <form role="search" class="d-flex" id="searchForm">
                 <input type="search" class="form-control" placeholder="Procure um usuário:" id="searchInput">
             </form>
         </div>
     </nav>
-
-    <div class="container">
-        <h1>teste</h1>
+<main class="contanier">
+    <div class="contanier my-4 text-center">
+        <h1>seja bem vindo ao portal de gestão de usuários</h1>
+        <button class="btn btn-primary my-3">cadastrar usuário</button>
     </div>
+    <div class="row" id="listadeusuarios"></div>
+    <nav aria-label="page navigation ">
+        <ul class="pagination justify-content-center"></ul>
+    </nav>
+</main>
+<div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="userModalLabel">Adicionar Usuário</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="userId">
+          <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="email">
+          </div>
+          <div class="mb-3">
+            <label for="genero" class="form-label">Gênero</label>
+            <select class="form-select" id="genero">
+              <option value="">Selecione o Gênero</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="text" class="form-control" id="telefone">
+          </div>
+          <div class="mb-3">
+            <label for="avatar" class="form-label">Avatar URL</label>
+            <input type="text" class="form-control" id="avatar">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary" id="saveUserButton" onclick="salvarUsuario()">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
 
     <script src="node_modules/axios/dist/axios.min.js"></script>
     <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!-- <script type="module" src="./scripts/api2.js"></script> -->
+
+
+    <!-- <script type="module" src="./scripts/app.js"></script> -->
 </body>
 </html>
